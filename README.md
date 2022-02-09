@@ -1,4 +1,4 @@
-# Webform Checkboxes Table
+# Webform Checkboxes/Radios Table
 
 Webform checkboxes/radios table (grid) component for Drupal 8/9 Webform module.
 
