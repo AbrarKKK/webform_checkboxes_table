@@ -33,7 +33,7 @@ class WebformCheckboxesTable extends Table {
     $row = 0;
     foreach (self::getCheckboxesElements($element) as $el_id => $el_info) {
       $el = $element[$el_id];
-      if (!empty($el['#title']) && $el_info['#type'] == 'checkboxes') {
+      if (!empty($el['#title']) && in_array($el_info['#type'], ['checkboxes', 'radios'])) {
         $new_element = [
           '#type'                => 'item',
           '#title'               => $el['#title'],
@@ -49,8 +49,7 @@ class WebformCheckboxesTable extends Table {
         // Add field title to the beginning of the table data array.
         if ($el_info['#title_display'] == 'before') {
           array_unshift($element['#rows'][$row]['data'], $title_array);
-        }
-        else {
+        } else {
           // Add field title to the end of the table data array.
           $element['#rows'][$row]['data'][] = $title_array;
         }
@@ -72,5 +71,4 @@ class WebformCheckboxesTable extends Table {
     }
     return $ids;
   }
-
 }

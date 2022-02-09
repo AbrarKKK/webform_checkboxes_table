@@ -1,6 +1,6 @@
 # Webform Checkboxes Table
 
-Webform checkboxes table (grid) component for Drupal 8 Webform module.
+Webform checkboxes/radios table (grid) component for Drupal 8/9 Webform module.
 
 The idea is to display checkboxes field in a grid (similar to Likert field but supports multiple values).
 
@@ -37,5 +37,33 @@ checkboxes_table:
       'Option 3': 'Option 3'
       'Option 4': 'Option 4'
 ```
+
+```YAML
+radios_table:
+  '#type': checkboxes_table
+  '#header':
+    - 'Field Label'
+    - 'Option 1'
+    - 'Option 2'
+    - 'Option 3'
+    - 'Option 4'
+  my_checkboxes_field_title:
+    '#type': radios
+    '#title': 'My Radios field title'
+    '#options':
+      'Radio 1': 'Radio 1'
+      'Radio 2': 'Radio 2'
+      'Radio 3': 'Radio 3'
+      'Radio 4': 'Radio 4'
+  another_checkboxes_field:
+    '#type': radios
+    '#title': 'Another radios field'
+    '#options':
+      'Option 1': 'Option 1'
+      'Option 2': 'Option 2'
+      'Option 3': 'Option 3'
+      'Option 4': 'Option 4'
+```
+
 
 Module developed by [Minnur Yunusov](https://www.minnur.com) at [Chapter Three](https://www.chapterthree.com)
